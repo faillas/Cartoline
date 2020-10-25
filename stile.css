@@ -1,0 +1,75 @@
+/* CSS Document */
+
+#Box1{
+    margin: 0 auto;
+    text-align: center;
+    background-color: transparent;
+    height: 30px;
+    position: relative;
+    padding:20px;
+}
+#Box2{
+    margin: 0 auto;
+    text-align: center;
+    background-color: transparent;
+    height: 30px;
+    position: relative;
+    padding:20px;
+}
+
+#Foto1 {
+    text-align:center;
+    margin:0 auto;
+    height: 480px;
+    width:100%;
+    border-bottom: 5px solid black;
+    border-top:5px solid black;
+         }
+
+#Foto2{
+    margin:0 auto;
+    height:480px;
+        }
+
+#Foto3 {
+    text-align:center;
+    margin:0 auto;
+    height: 480px;
+    width:100%;
+    border-bottom: 5px solid black;
+    border-top:5px solid black;
+        }
+        
+#Foto4{
+       margin:0 auto;
+       height:480px;
+        }
+
+#Uno{
+    text-align:center;
+}
+
+#Due{
+    text-align:center;
+}
+
+.Unipi{
+    background-color: #30659b;
+}
+
+footer{
+    text-align:center;
+    background-color: black;
+       }
+
+p{
+    color:white;
+}
+
+h1{
+    color:black;
+}
+
+i{
+    display:none;
+}

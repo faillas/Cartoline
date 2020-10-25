@@ -1,0 +1,1306 @@
+MacBook-Air-di-simone:~ jarvis$ xmllint
+Usage : xmllint [options] XMLfiles ...
+	Parse the XML files and output the result of the parsing
+	--version : display the version of the XML library used
+	--debug : dump a debug tree of the in-memory document
+	--shell : run a navigating shell
+	--debugent : debug the entities defined in the document
+	--copy : used to test the internal copy implementation
+	--recover : output what was parsable on broken XML documents
+	--huge : remove any internal arbitrary parser limits
+	--noent : substitute entity references by their value
+	--noenc : ignore any encoding specified inside the document
+	--noout : don't output the result tree
+	--path 'paths': provide a set of paths for resources
+	--load-trace : print trace of all external entities loaded
+	--nonet : refuse to fetch DTDs or entities over network
+	--nocompact : do not generate compact text nodes
+	--htmlout : output results as HTML
+	--nowrap : do not put HTML doc wrapper
+	--valid : validate the document in addition to std well-formed check
+	--postvalid : do a posteriori validation, i.e after parsing
+	--dtdvalid URL : do a posteriori validation against a given DTD
+	--dtdvalidfpi FPI : same but name the DTD with a Public Identifier
+	--timing : print some timings
+	--output file or -o file: save to a given file
+	--repeat : repeat 100 times, for timing or profiling
+	--insert : ad-hoc test for valid insertions
+	--compress : turn on gzip compression of output
+	--html : use the HTML parser
+	--xmlout : force to use the XML serializer when using --html
+	--nodefdtd : do not default HTML doctype
+	--push : use the push mode of the parser
+	--pushsmall : use the push mode of the parser using tiny increments
+	--push-structured-error-fatal-stop : call xmlStopParser() on fatal structured errors
+	--memory : parse from memory
+	--maxmem nbbytes : limits memory allocation to nbbytes bytes
+	--nowarning : do not emit warnings from parser/validator
+	--noblanks : drop (ignorable?) blanks spaces
+	--nocdata : replace cdata section with text nodes
+	--format : reformat/reindent the output
+	--encode encoding : output in the given encoding
+	--dropdtd : remove the DOCTYPE of the input docs
+	--pretty STYLE : pretty-print in a particular style
+	                 0 Do not pretty print
+	                 1 Format the XML content, as --format
+	                 2 Add whitespace inside tags, preserving content
+	--c14n : save in W3C canonical format v1.0 (with comments)
+	--c14n11 : save in W3C canonical format v1.1 (with comments)
+	--exc-c14n : save in W3C exclusive canonical format (with comments)
+	--nsclean : remove redundant namespace declarations
+	--testIO : test user I/O support
+	--catalogs : use SGML catalogs from $SGML_CATALOG_FILES
+	             otherwise XML Catalogs starting from 
+	         file:///etc/xml/catalog are activated by default
+	--nocatalogs: deactivate all catalogs
+	--auto : generate a small doc on the fly
+	--xinclude : do XInclude processing
+	--noxincludenode : same but do not generate XInclude nodes
+	--nofixup-base-uris : do not fixup xml:base uris
+	--loaddtd : fetch external DTD
+	--dtdattr : loaddtd + populate the tree with inherited attributes 
+	--stream : use the streaming interface to process very large files
+	--walker : create a reader and walk though the resulting doc
+	--pattern pattern_value : test the pattern support
+	--chkregister : verify the node registration code
+	--relaxng schema : do RelaxNG validation against the schema
+	--schema schema : do validation against the WXS schema
+	--schematron schema : do validation against a schematron
+	--sax1: use the old SAX1 interfaces for processing
+	--sax: do not build a tree but work just at the SAX level
+	--sax-fatal-stop: call xmlStopParser() on fatal errors during SAX parsing
+	--oldxml10: use XML-1.0 parsing rules before the 5th edition
+	--xpath expr: evaluate the XPath expression, imply --noout
+
+Libxml project home page: http://xmlsoft.org/
+To report bugs or get some help check: http://xmlsoft.org/bugs.html
+MacBook-Air-di-simone:~ jarvis$ xmllint ///Users/jarvis/Desktop/CDT/teicorpus.xml --postvalid
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet version="2.0" type="text/xsl" href="stile.xsl"?>
+<!DOCTYPE teiCorpus SYSTEM "schema.dtd">
+<teiCorpus xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3.0" xml:lang="it">
+  <teiHeader>
+    <fileDesc>
+        <titleStmt>
+            <title>Progetto di Codifica di Testi</title>
+            <respStmt>
+                <resp>a cura di:</resp>
+                <name xml:id="SF">Simone Failla</name>
+            </respStmt>
+            <respStmt>
+                <resp>Ente di appartenenza:</resp>
+                <name type="place" xml:id="SP">La Spezia</name>
+            </respStmt>
+            <respStmt>
+                <resp>Compilatore:</resp>
+                <name xml:id="TC">Tommaso Castagneto</name>
+            </respStmt>
+            <respStmt>
+                <resp>Responsabile scientifico:</resp>
+                <name xml:id="GP">Giacomo Paolicchi</name>
+                <name xml:id="ES">Enrica Salvatori</name>
+            </respStmt>
+            <respStmt>
+                <resp>Funzionario responsabile:</resp>
+                <name xml:id="MR">Marzia Ratti</name>
+            </respStmt>
+        </titleStmt>
+        <editionStmt>
+            <edition>Facsimile digitale da scannerizzazioni</edition>
+        </editionStmt>
+        <publicationStmt>
+            <publisher>Unipi</publisher>
+            <pubPlace>Pisa</pubPlace>
+            <availability status="restricted">
+                <p>Disponibile previo consenso del depositante ai soli fini della ricerca accademica e dell'insegnamento.</p>
+            </availability>
+            <date when="2019">2019</date>
+            <distributor>CNR</distributor>
+            <address>
+                <addrLine>Consiglio Nazionale di Ricerca</addrLine>
+                <addrLine>Via Giuseppe Moruzzi 1</addrLine>
+                <addrLine>56124</addrLine>
+                <addrLine>Pisa</addrLine>
+            </address>
+        </publicationStmt>
+        <sourceDesc>
+            <bibl>
+                <title type="custom" resp="#TC">TeiCorpus</title>
+                <author>Simone Failla</author>
+                <pubPlace>Pisa</pubPlace>
+                <date>2020</date>
+            </bibl>
+            <msDesc>
+                <msIdentifier>
+                    <country>Italy</country>
+                    <settlement type="city">La Spezia</settlement>
+                    <repository>Museo Civico Etnografico "Giovanni Podenzana", Sezione dei cimeli garibaldini e della Prima Guerra Mondiale</repository>
+                </msIdentifier>
+                <msContents>
+                    <summary>Cartoline Artistiche</summary>
+                    <textLang>Italiano</textLang>
+                </msContents>
+            </msDesc>
+        </sourceDesc>
+    </fileDesc>
+    <encodingDesc>        
+        <schemaRef type=" schema " url=" file: ///schema.dtd "/>
+        <projectDesc> 
+            <p>Cartoline raccolte per il progetto di codifica di testi, corso di laurea di Informatica Umanistica, universita di Pisa.</p>
+        </projectDesc>
+        <samplingDecl>
+            <p>Selezione avvenuta tramite osservazione di fenomeni eterogenei fra due cartoline oggetto di codifica.</p>
+        </samplingDecl>
+        <editorialDecl>
+            <p>Riproduzione il più possibile fedele dei fenomeni testuali con il minor numero possibile di aggiunte dall'editore (a livello diplomatico-interpretativo) con analisi editoriale dei contenuti e delle categorie grammaticali (tagset UCREL CRAWLS7).</p>
+            <correction>
+                <p>Parole in disuso marcate con <gi>orig</gi> e regolarizzate con elemento <gi>reg</gi>.</p>
+            </correction>
+            <punctuation marks="all" placement="internal"> <p>Tutti i segni di punteggiatura nel testo sorgente sono stati mantenuti e rappresentati. Dove necessario, aggiunti.</p></punctuation>
+        </editorialDecl>
+        <schemaSpec ident="schema" docLang="it" prefix="tei_" xml:lang="en">
+            <moduleRef key="core" except="biblScope binaryObject citedRange desc distinct divGen email gloss hi mentioned milestone monogr relatedItem said series soCalled sp speaker stage street"/>
+            <moduleRef key="tei" except=""/><moduleRef key="header" except="appInfo application funder geoDecl refState refsDecl scriptNote segmentation seriesStmt sponsor stdVals tagUsage taxonomy xenoData"/>
+            <moduleRef key="textstructure" except="closer div1 div2 div3 div4 div5 div6 div7 docImprint imprimatur salute trailer"/>
+            <moduleRef key="corpus" except="locale"/><moduleRef key="analysis" except="cl phr spanGrp"/>
+            <moduleRef key="tagdocs" except="altIdent alternate anyElement classes code constraint constraintSpec content dataFacet dataRef dataSpec datatype defaultVal eg egXML elementRef elementSpec equiv exemplum ident listRef macroRef macroSpec memberOf model modelGrp modelSequence outputRendition param paramList paramSpec remarks sequence specGrp specGrpRef specList tag textNode val valDesc valItem valList"/>
+            <moduleRef key="figures" except="cell formula notatedMusic row table"/>
+            <moduleRef key="transcr" except="fw metamark substJoin"/>
+            <moduleRef key="namesdates" except="faith floruit geo geogFeat geogName langKnowledge langKnown listEvent listNym listObject nameLink nationality nym object objectIdentifier objectName offset population residence socecStatus terrain trait"/>
+            <moduleRef key="msdescription" except="accMat acquisition additional additions adminInfo altIdentifier binding bindingDesc catchwords collation collection colophon custEvent custodialHist decoDesc decoNote depth dim explicit filiation finalRubric foliation heraldry history incipit institution layout layoutDesc locus locusGrp msFrag msItemStruct msName msPart musicNotation origDate origPlace origin provenance recordHist rubric scriptDesc seal sealDesc secFol signatures source surrogates watermark"/>
+            <moduleRef key="linking" except="ab alt altGrp anchor join joinGrp link linkGrp"/>
+        </schemaSpec>
+        <p>Riferimenti creati con gli elementi <gi>bibl</gi> e <gi>note</gi>.</p>
+    </encodingDesc>
+    <revisionDesc>
+        <listChange>
+            <change xml:id="DRAFT6" when="2019-12-18" who="#SF">
+                Modifiche per la validazione mediante dtd.
+            </change>
+        </listChange>
+    </revisionDesc>
+ </teiHeader>
+
+ <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xml:lang="it" xml:id="C1">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title type="main">[Donna con lettera]</title>
+                <author>Bianchi, Alberto</author>
+                <author>Coliola, Giovanni</author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Unipi</publisher>
+                <distributor>CNR</distributor>
+                <address>
+                    <addrLine>Consiglio Nazionale di Ricerca</addrLine>
+                    <addrLine>Via Giuseppe Moruzzi 1</addrLine>
+                    <addrLine>56124</addrLine>
+                    <addrLine>Pisa</addrLine>
+                </address>
+                <date when="2019">2019</date>
+                <pubPlace>Pisa</pubPlace>
+                <availability>
+                    <p>Disponibile previo consenso del depositante ai soli fini della ricerca accademica e dell'insegnamento.</p>
+                </availability>               
+            </publicationStmt> 
+            <notesStmt>
+                <note>Cartolina che rappresenta una donna con lettera e bastone.La cartolina fu verificata per la censura e ne riporta il timbro sul retro.</note>
+            </notesStmt>   
+            <sourceDesc>
+                <bibl>
+                    <title>[Donna con lettera]</title>
+                    <author>Coliola, Giovanni</author>
+                    <pubPlace>La Spezia</pubPlace>
+                    <date>1917</date>
+                </bibl>
+                <msDesc>
+                    <msIdentifier>
+                        <country>Italia</country>
+                        <settlement>La Spezia (SP)</settlement>
+                        <repository>Museo Civico Etnografico "Giovanni Podenzana", Sezione dei cimeli garibaldini e della Prima Guerrra Mondiale</repository>
+                        <idno type="DOI">7694_031_001/002</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <summary>Cartolina Artistica</summary>
+                        <textLang>Italiano</textLang>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc>
+                            <supportDesc material=" paper ">
+                                <support>
+                                    <dimensions unit="cm">
+                                        <height>9</height>
+                                        <width>14</width>
+                                    </dimensions>
+                                    <material>carta</material>                                    
+                                    <objectType>Cartolina</objectType>
+                                    <stamp>francobollo - Poste Italiane da 5 centesimi</stamp>
+                                </support>
+                                <condition>Buono</condition>
+                            </supportDesc>
+                        </objectDesc>
+                    </physDesc>
+                </msDesc>
+                <listPerson>
+                    <person xml:id="AB" sex="M">
+                        <persName>
+                            <surname>Bianchi</surname>
+                            <forename>Alberto</forename>
+                        </persName>
+                        <occupation>Illustratore</occupation>
+                    </person>
+                    <person xml:id="OT" sex="F">
+                        <persName>
+                            <surname>Turtura</surname>
+                            <forename>Oliva</forename>
+                        </persName>
+                        <occupation>Occupazione sconosciuta</occupation>
+                    </person>
+                    <person xml:id="GC" sex="M">
+                        <persName>
+                            <forename>Giovanni</forename>
+                            <surname>Coliola </surname>
+                        </persName>
+                        <occupation>Tenente colonnello</occupation>
+                    </person>
+                </listPerson>
+                <listPlace>
+                    <place xml:id="RV">
+                        <placeName>Ravenna</placeName>
+                        <settlement type="località">città</settlement>
+                        <district type="comune">Ravenna</district>
+                        <district type="provincia">RV</district>
+                        <country key="N">IT</country>
+                        <note>...</note>
+                    </place>
+                </listPlace>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <abstract>
+                <p>cartolina artistica appartenente al comune di La Spezia con collocazione specifica al Museo Civico Etnografico "Giovanni Podenzana", Sezione dei cimeli garibaldini e della Prima Guerra Mondiale di buona conservazione</p>
+            </abstract>
+            <creation>
+                <date when=" 1917-01-04 ">4 Gennaio 1917</date>
+            </creation>
+            <textClass>
+                <keywords scheme="http://www.treccani.it/vocabolario/?">
+                    <term>Elaborazione dati, </term>
+                    <term>Codifica di testi, </term>
+                    <term>Trascrizione, </term>
+                    <term>Cartolina, </term>
+                    <term>Informatica, </term>
+                    <term>digital humanities, </term>
+                    <term>La Spezia, </term>
+                    <term>Bianchi, </term>
+                </keywords>
+            </textClass>
+            <langUsage>
+                <language ident="it"> italiano </language>
+            </langUsage>
+            <textDesc n="written text">
+                <channel mode="w"/>
+                <constitution type="single"/>
+                <derivation type="original"/>
+                <domain type="art"/>
+                <factuality type="fact"/>
+                <interaction type="inapplicable" active="singular" passive="singular"/>
+                <preparedness type="spontaneous"/>
+                <purpose type="exspress" degree="high"/>
+            </textDesc>
+            <calendarDesc>
+                <calendar xml:id="Gregorian">
+                    <p>Calendario Gregoriano</p>
+                </calendar>
+            </calendarDesc>
+            <correspDesc>
+                <correspAction type="sent">
+                    <persName>Giovanni Coliola</persName>
+                    <persName>Oliva Turtura</persName>
+                    <settlement>Ravenna</settlement>
+                    <date when="1917-01-04"/>
+                </correspAction>
+                <correspContext>
+                    <ref>cartolina di <persName>Giovanni Coliola</persName> a <persName>Oliva Turtura</persName>
+                        <date when="1917-01-04">4 Gennaio 1917</date>
+                    </ref>
+                </correspContext>
+            </correspDesc>
+            <handNotes>
+                <handNote medium="lapis">Numero 31 di inventario in alto a sinistra, aggiunto dal catalogatore</handNote>
+                <handNote medium="black-ink">Scritto da una sola mano con inchiostro nero.</handNote>
+            </handNotes>            
+            <listTranspose>
+                <transpose>
+                    <ptr target="#7694-031F"/>
+                    <ptr target="#7694-031R"/>
+                </transpose>
+            </listTranspose>
+        </profileDesc>
+    </teiHeader>
+    <text xml:id="PRIMOTESTO">
+    <pb n="1" facs="#7694031F"/>
+    <body>
+    <div>
+        <l>
+            <w n="1.3" pos="NP1">
+                BIANCHI
+            </w>
+        </l>
+    <pb n="2" facs="#7694031R"/>
+            <l xml:id="segLinea1" facs="#Linea1">
+                <w n="1.1" pos="NN2">Gentili
+                    <gap atLeast="4" atMost="7" unit="chars" reason="illegible"/>
+                </w>
+            </l>
+            <l xml:id="segLinea2" facs="#Linea2">
+                <w n="1.2" pos="NNB">
+                    <choice xml:lang="it">
+                        <abbr type="title">Sig
+                            <supplied reason="omitted-in-original">
+                                <pc pos="." type="point">.</pc>
+                            </supplied>na
+                        </abbr>
+                        <expan>
+                            Sig<ex>nori</ex>na
+                        </expan>
+                    </choice>
+                </w>
+                <w n="1.3" pos="NP1">
+                    Oliva Turtura
+                </w>
+            </l>
+            <l xml:id="segLinea3" facs="#Linea3">
+                <w n="1.4" pos="NN1">Via</w>
+                <w n="1.5" pos="NP1">
+                    Girolami Ronfi
+                </w>
+                <w n="1.6" pos="MC">
+                    <unclear reason="inaudible">28</unclear>
+                </w>
+            </l>
+            <l xml:id="segLinea4" facs="#Linea4">
+                <w n="1.7" pos="NP1">Ravenna</w>
+            </l>
+            <l xml:id="segLinea5" facs="#Linea5">
+                <w n="2.1" pos="UH">
+                <w>Cari</w>
+                    <gap atLeast="4" atMost="8" unit="chars" reason="illegible"/>
+                </w>
+                <pc n="2.2" pos="," type="comma">,</pc>
+                <w n="2.3" pos="EX">li</w>
+                <w n="2.4" pos="MCMC">
+                    4
+                </w>
+                <pc n="2.5" pos="/" type="slash">
+                    /
+                </pc>
+                <w n="2.6" pos="MCMC">
+                    1
+                </w>
+                <pc n="2.7" pos="-" type="dash">
+                    -
+                </pc>
+                <w n="2.9" pos="MCMC">
+                    1917
+                </w>
+            </l>
+            <l xml:id="segLinea6" facs="#Linea6">
+                <w n="2.6" pos="PPY">Ti</w>
+                <w>
+                    <gap atLeast="5" atMost="8" unit="chars" reason="illegible"/>
+                </w>
+                <w n="2.7" pos="RR">
+                    <unclear reason="illegible">fortemente</unclear>
+                </w>
+            </l>
+            <l xml:id="segLinea7" facs="#Linea7">
+                <w n="2.8" pos="NP1">
+                    Giovanni
+                </w>
+            </l>
+            <l>
+            <w n="3.1" pos="VVN">
+                <damage agent="rubbing">
+                    <c>V</c>
+                    <c>E</c>
+                    <c>R</c>
+                </damage>
+                    <c>I</c>
+                <damage agent="rubbing">
+                    <c>F</c>
+                    <c>I</c>
+                    <c>C</c>
+                    <c>A</c>
+                </damage>
+                    <c>T</c>
+                    <c>O</c>
+            </w>
+            <w n="3.2" pos="IF">
+                <damage agent="rubbing">
+                    <supplied reason="illegible">
+                        <add place="inline">
+                            <c>P</c>
+                            <c>E</c>
+                            <c>R</c>
+                        </add>
+                    </supplied>
+                </damage>
+            </w>
+            <w n="3.3" pos="NN1">
+                <damage agent="rubbing">
+                    <supplied reason="illegible">
+                        <add place="inline">
+                            <c>C</c>
+                            <c>E</c>
+                            <c>N</c>
+                            <c>S</c>
+                        </add>
+                    </supplied>
+                </damage>
+                <unclear reason="faded">
+                    <c>U</c>
+                    <c>R</c>
+                    <c>A</c>
+                </unclear>
+            </w>
+        </l>
+        <note>timbro di verifica censura</note>
+        <l>
+            <w n="5.1" pos="NC">
+                31
+            </w>
+        </l>
+        <note>annotazione d'inventario numero all'angolo in alto a sinistra</note>
+        <l>
+            <w n="5.2" pos="NC">
+                831/ 5 
+            </w>
+            <pc n="5.3" pos="/" type="slash">
+                /
+            </pc>
+            <w n="5.4" pos="NC">
+                5 
+            </w>
+        </l>
+        <note>Numero seriale cartolina</note>
+        <note>Francobollo delle Poste Italiane di 5 centesimi raffigurante la testa di un uomo</note>
+        <note>timbro raffigurante stemma del comando</note>
+    </div>
+    </body>
+    </text>
+    <facsimile>
+        <surfaceGrp>
+            <surface xml:id="PRIMOFRONTE" type="fronte">
+                <graphic url="img/7694-031F.jpg" width="390px" height="602px"/>
+                <zone xml:id="Firma" points=" 659,1398 874,1405 881,1307 660,1300 "/>
+            </surface>
+            <surface xml:id="PRIMORETRO" type="retro">
+                <graphic url="img/7694-031R.jpg" width="1673px" height="1087px"/>
+                <zone xml:id="Francobollo" points=" 1235,81 1523,52 1550,311 1258,326 "/>
+                <zone xml:id="Censura" points=" 324,1062 598,975 431,354 152,441 "/>
+                <zone xml:id="Inventario" points=" 9,117 129,121 132,11 8,13 "/>
+                <zone xml:id="Serie" points=" 779,996 747,1069 907,1066 876,994 "/>
+                <zone xml:id="Indirizzo" points=" 819,244 1184,248 1218,467 1633,527 1630,1021 931,1023 830,949 784,564 "/>
+                <zone xml:id="Linea1" ulx="851" uly="351" lrx="1244" lry="384" rendition="Line"/>
+                <zone xml:id="Linea2" ulx="814" uly="531" lrx="1643" lry="600" rendition="Line"/>
+                <zone xml:id="Linea3" ulx="838" uly="661" lrx="1643" lry="731" rendition="Line"/>
+                <zone xml:id="Linea4" ulx="863" uly="812" lrx="1575" lry="936" rendition="Line"/>
+                <zone xml:id="Testo" points=" 796,73 456,95 221,127 279,383 304,409 298,665 265,929 280,975 343,1017 326,912 364,800 378,618 482,621 491,1001 497,1032 601,1012 678,1017 724,1033 764,1021 781,968 802,754 799,603 773,553 799,355 807,183 805,105 "/>
+                <zone xml:id="Linea5" ulx="693" uly="124" lrx="774" lry="990" rendition="Line"/>
+                <zone xml:id="Linea6" ulx="490" uly="123" lrx="593" lry="992" rendition="Line"/>
+                <zone xml:id="Linea7" ulx="272" uly="167" lrx="338" lry="974" rendition="Line"/>
+                <zone xml:id="Comando" points=" 620,521 1031,524 1017,126 630,129 "/>
+            </surface>
+        </surfaceGrp>
+    </facsimile>
+ </TEI>
+
+ <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xml:lang="it" xml:id="C2">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Incontro di Dante con Beatrice</title>
+                <author>Borgi, Umberto</author>
+                <author>Alighieri, Dante</author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Unipi</publisher>
+                <distributor>CNR</distributor>
+                <address>
+                    <addrLine>Consiglio Nazionale di Ricerca</addrLine>
+                    <addrLine>Via Giuseppe Moruzzi 1</addrLine>
+                    <addrLine>56124</addrLine>
+                    <addrLine>Pisa</addrLine>
+                </address>
+                <date when="2019">2019</date>
+                <pubPlace>Pisa</pubPlace>
+                <availability>
+                    <p>Disponibile previo consenso del depositante ai soli fini della ricerca accademica e dell'insegnamento.</p>
+                </availability>               
+            </publicationStmt>
+            <notesStmt>
+                <note>Cartolina artistica. Dante guarda Beatrice camminare con altre due donne. Sul retro troviamo stampati i primi 4 versi della poesia “Tanto gentile e tanto onesta pare” di Dante, seguiti da un breve commento dell'opera. Troviamo anche la stampa “Proprietà Artistica E.Sborgi-Firenze”.</note>
+            </notesStmt>  
+            <sourceDesc>
+                <bibl>
+                    <title>Incontro di Dante con Beatrice</title>
+                    <author>Borgi, Umberto</author>
+                    <author>Alighieri, Dante</author> 
+                    <publisher>Sborgi</publisher>
+                    <pubPlace>Firenze</pubPlace>
+                    <date when="1911">1911</date>
+                </bibl>
+                <msDesc>
+                    <msIdentifier>
+                        <country>Italia</country>
+                        <settlement>La Spezia (SP)</settlement>
+                        <repository>Museo Civico Etnografico "Giovanni Podenzana", Sezione dei cimeli garibaldini e della Prima Guerrra Mondiale</repository>
+                        <idno type="DOI">7694_080_001/002</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <summary>Cartolina Artistica</summary>
+                        <textLang>Italiano</textLang>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc>
+                            <supportDesc material=" paper ">
+                                <support>
+                                    <dimensions unit="cm">
+                                        <height>9</height>
+                                        <width>14</width>
+                                    </dimensions>
+                                    <material>carta</material>
+                                    <objectType>Cartolina</objectType>                                   
+                                </support>
+                                <condition>Buono</condition>
+                            </supportDesc>
+                        </objectDesc>
+                    </physDesc>
+                </msDesc>
+                <listPerson>
+                    <person xml:id="DA" sex="M">
+                        <persName>
+                            <surname>Alighieri</surname>
+                            <forename>Dante</forename>
+                        </persName>
+                            <occupation>Poeta</occupation>
+                    </person>
+                    <person xml:id="UB" sex="M">
+                        <persName>
+                            <surname>Borgi</surname>
+                            <forename>Umberto</forename>
+                        </persName>
+                        <occupation>Critico</occupation>
+                    </person>
+                </listPerson>
+                <listPlace>
+                    <place xml:id="RV2">
+                        <placeName>Ravenna</placeName>
+                        <settlement type="località">città</settlement>
+                        <district type="comune">Ravenna</district>
+                        <district type="provincia">RV</district>
+                        <country key="N">IT</country>
+                    </place>
+                    <place xml:id="FI">
+                        <placeName>Firenze</placeName>
+                        <settlement type="località">città</settlement>
+                        <district type="comune">Firenze</district>
+                        <district type="provincia">FI</district>
+                        <country key="N">IT</country>
+                    </place>
+                </listPlace>
+            </sourceDesc>
+        </fileDesc>                       
+        <profileDesc>
+            <abstract>
+                <p>cartolina artistica appartenente al comune di La Spezia con collocazione specifica al Museo Civico Etnografico "Giovanni Podenzana", Sezione dei cimeli garibaldini e della Prima Guerra Mondiale di buona conservazione.</p>
+            </abstract>
+            <creation>
+                <date when=" 1911-11-14 ">14 Novembre 1911</date>
+            </creation>
+            <langUsage>
+                <language ident="it"> italiano </language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="http://www.treccani.it/vocabolario/?">
+                    <term>Rime nuove, </term>
+                    <term>Inferno, </term>
+                    <term>Holliday, </term>
+                    <term>UniPi, </term>
+                    <term>Borgi, </term>
+                    <term>Dante</term>
+                </keywords>
+            </textClass>            
+            <calendarDesc>
+                <calendar xml:id="Gregorian2">
+                    <p>Calendario Gregoriano</p>
+                </calendar>
+            </calendarDesc>  
+            <handNotes>
+                <handNote medium="lapis">Numero 80 di inventario in alto a sinistra, aggiunto dal catalogatore</handNote>
+                <handNote script="LTC Pabst Oldstyle Regular" medium="black-ink">sezione stampata con inchiostro nero.</handNote>
+                <handNote medium="black-ink">Scritto da una sola mano con inchiostro nero.</handNote>
+            </handNotes>            
+            <listTranspose>
+                <transpose>
+                    <ptr target="#SECONDOFRONTE"/>
+                    <ptr target="#SECONDORETRO"/>
+                </transpose>
+            </listTranspose>            
+        </profileDesc>
+    </teiHeader>
+    <text xml:id="SECONDO">
+        <pb n="3" facs="#SECONDOFRONTE"/>
+        <body>
+        <div>
+            <l>
+                <w n="40.1" pos="NN1">
+                    Amor
+                </w>
+                <w n="40.2" pos="PPIO1">
+                    mi
+                </w>
+                <w n="40.3" pos="VVD">
+                    mosse
+                </w>
+                <pc n="40.4" pos="," type="comma">
+                    ,
+                </pc>
+                <w n="41.1" pos="DD1">
+                    che
+                </w>
+                <w n="41.2" pos="PPIO1">
+                    mi
+                </w>
+                <w n="41.3" pos="VVZ">
+                    fa
+                </w>
+                <w n="41.4" pos="NN1">
+                    parlare
+                </w>
+            </l>
+            <bibl>Dante Alighieri, Inferno, It., XIV sec. (canto II, Verso 72).</bibl> 
+            <pb n="4" facs="#SECONDORETRO"/>
+            <l xml:id="segRiga1" facs="#Riga1">
+                <s>
+                    <w n="1.1" pos="NN1">
+                        <damage agent="water">
+                            <supplied reason="illegible">
+                                <add place="inline">IN</add>
+                            </supplied>
+                        </damage>
+                        CONTRO
+                    </w>
+                    <w n="1.2" pos="IO">
+                        DI
+                    </w>
+                    <w n="1.3" pos="NP1">
+                        DANTE
+                    </w>
+                    <w n="1.4" pos="IW">
+                        CON
+                    </w>
+                    <w n="1.5" pos="NP1">
+                        BEATRICE
+                    </w>
+                </s>
+            </l>
+            <cit type="transcription">
+                <quote>
+                    <l xml:id="segRiga2" facs="#Riga2">
+                        <s>
+                            <w n="2.1" pos="RG">Tanto</w>
+                            <w n="2.2" pos="JJ">gentile</w>
+                            <w n="2.3" pos="CC">e</w>
+                            <w n="2.4" pos="RG">tanto</w>
+                            <w n="2.5" pos="JJ">onesta</w>
+                            <w n="2.6" pos="VVZ">pare</w>
+                        </s>
+                    </l>
+                    <l xml:id="segRiga3" facs="#Riga3">
+                        <s>
+                            <w n="3.1" pos="AT">La</w>
+                            <w n="3.2" pos="NN1">donna</w>
+                            <w n="3.3" pos="APPGE">mia</w>
+                            <pc n="3.4" pos="," type="comma">,</pc>
+                        </s>
+                        <s>
+                            <w n="3.1" pos="CS">quand</w>
+                            <pc n="3.2" pos=" ’ " type="apostrophe">’</pc>
+                            <w n="3.3" pos="CC">ella</w>
+                            <w n="3.4" pos="RR">altrui</w>
+                            <w n="3.5" pos="VVZ">saluta</w>
+                        </s>
+                    </l>
+                    <l xml:id="segRiga4" facs="#Riga4">
+                        <s>
+                            <w n="5.1" pos="CST">
+                                <choice>
+                                    <orig>Ch</orig>
+                                    <reg>Che</reg>
+                                </choice>
+                            </w>
+                            <pc n="5.2" pos=" ' " type="apostrophe">’</pc>
+                            <w n="5.3" pos="AT1">ogni</w>
+                            <w n="5.4" pos="NN1">lingua</w>
+                            <w n="5.5" pos="VVZ">
+                                <choice>
+                                    <orig>divien</orig>
+                                    <reg>diviene</reg>
+                                </choice>
+                            </w>
+                            <w n="5.6" pos="VVG">tremando</w>
+                            <w n="5.7" pos="JJ">muta</w>
+                        </s>
+                    </l>
+                    <l xml:id="segRiga5" facs="#Riga5">
+                        <s>
+                            <w n="6.1" pos="CC">E</w>
+                            <w n="6.2" pos="AT">gli</w>
+                            <w n="6.3" pos="NN2">occhi</w>
+                            <w n="6.4" pos="XX">non</w>
+                            <w n="6.5" pos="VVI">
+                                <choice>
+                                    <orig>ardiscon</orig>
+                                    <reg>ardiscono</reg>
+                                </choice>
+                            </w>
+                            <w n="6.7" pos="TO">di</w>
+                            <w n="6.8" pos="VVI">guardare</w>
+                            <pc n="6.9" pos="." type="point">.</pc>
+                        </s>
+                    </l>
+                </quote>
+                <bibl>Dante Alighieri, Rime Nuove, It., XIV sec. (Versi 1-4, Rime XXII).</bibl>
+            </cit>
+            <p>
+                <l xml:id="segRiga6" facs="#Riga6">
+                    <s>
+                        <w n="7.1" pos="RR">Così</w>
+                        <w n="7.2" pos="NP1">Dante</w>
+                        <pc n="7.3" pos="," type="comma">,</pc>
+                        <w n="7.4" pos="II">nella</w>
+                        <w n="7.5" pos="NN1">visione</w>
+                        <w n="7.6" pos="JJ">incantata</w>
+                        <w n="7.7" pos="IO">di</w>
+                        <w n="7.8" pos="NP1">Beatrice</w>
+                        <w n="7.9" pos="APPGE">sua</w>
+                        <pc n="7.10" pos="," type="comma">,</pc>
+                    </s>
+                </l>
+                <l xml:id="segRiga7" facs="#Riga7">
+                    <s>
+                        <w n="8.1" pos="VVD">Chiudeva</w>
+                        <w n="8.2" pos="II">nel</w>
+                        <w n="8.3" pos="JJT">dolcissimo</w>
+                        <w n="8.4" pos="II">verso</w>
+                        <w n="8.5" pos="DB">tutto</w>
+                        <w n="8.6" pos="AT">il</w>
+                        <w n="8.7" pos="NN1">cuore</w>
+                        <w n="8.8" pos="JJ">pieno</w>
+                    </s>
+                    <w n="9.1" pos="CC">e</w>
+                </l>
+                <l xml:id="segRiga8" facs="#Riga8">
+                    <s>
+                        <w n="10.1" pos="VVG">Tremante</w>
+                        <w n="10.2" pos="IO">di</w>
+                        <w n="10.3" pos="NN1">passione</w>
+                        <pc n="10.4" pos="." type="point">.</pc>
+                    </s>
+                </l>
+            </p>
+            <p>
+                <l xml:id="segRiga9" facs="#Riga9">
+                    <s>
+                        <w n="11.1" pos="CC">e</w>
+                        <w n="11.2" pos="RR">così</w>
+                        <pc n="11.3" pos="," type="comma">,</pc>
+                        <w n="11.4" pos="VVG">tremante</w>
+                        <pc n="11.5" pos="," type="comma">,</pc>
+                        <w n="11.6" pos="PPHS1">Egli</w>
+                        <w n="11.7" pos="VM">deve</w>
+                        <w n="11.8" pos="VHI">averla</w>
+                        <w n="11.9" pos="VVN">guardata</w>
+                        <w n="11.10" pos="VV0">passare</w>
+                    </s>
+                </l>
+                <l xml:id="segRiga10" facs="#Riga10">
+                    <s>
+                        <w n="12.1" pos="IF">per</w>
+                        <w n="12.2" pos="AT">
+                            <damage agent="water">
+                                <supplied reason="illegible">
+                                    <add place="inline">le</add>
+                                </supplied>
+                            </damage>
+                        </w>
+                        <w n="12.3" pos="JJ">libere</w>
+                        <w n="12.4" pos="NN2">vi
+                            <unclear>e</unclear>
+                        </w>
+                        <w n="12.5" pos="IO">della</w>
+                        <w n="12.6" pos="APPGE">sua</w>
+                        <w n="12.7" pos="NN1">città</w>
+                        <pc n="12.8" pos="," type="comma">,</pc>
+                        <w n="12.9" pos="VV0">passare</w>
+                    </s>
+                </l>
+            </p>
+            <cit type="transcription">
+                <quote>
+                    <l xml:id="segRiga11" facs="#Riga11">
+                        <s>
+                            <w n="13.1" pos="RR">benignamente</w>
+                            <w n="13.2" pos="IO">d</w>
+                            <pc n="13.3" pos=" ' " type="apostrophe">'</pc>
+                            <w n="13.4" pos="NN1">umiltà</w>
+                            <w n="13.5" pos="VVN">
+                                <choice>
+                                    <orig>vestuta</orig>
+                                    <reg>vestita</reg>
+                                </choice>
+                            </w>
+                        </s>
+                    </l>
+                    <l xml:id="segRiga12" facs="#Riga12">
+                        <w>
+                            <c>p</c>
+                            <damage agent="water">
+                                <gap atLeast="4" atMost="7" unit="chars" reason="illegible"/>
+                            </damage>
+                            <unclear reason="faded">
+                                <c>f</c>
+                            </unclear>
+                            onda
+                        </w>
+                        <pc pos="," type="comma">,</pc>
+                        <s>
+                            <w n="14.1" pos="JJ">gentile</w>
+                            <w n="14.2" pos="NN1">cosa</w>
+                            <w n="14.3" pos="JJ">divina</w>
+                            <w n="14.4" pos="VVN">scesa</w>
+                        </s>
+                    </l>
+                    <l xml:id="segRiga13" facs="#Riga13">
+                        <damage agent="water">
+                            <gap atLeast="4" atMost="6" unit="chars" reason="illegible"/>
+                        </damage>
+                        <s>
+                            <w n="14.1" pos="IO">di</w>
+                            <w n="14.2" pos="NN1">cielo</w>
+                            <w n="14.3" pos="II">in</w>
+                            <w n="14.4" pos="NN1">terra</w>
+                            <w n="14.5" pos="TO">a</w>
+                            <w n="14.6" pos="NN1">miracolo</w>
+                            <w n="14.7" pos="VVI">mostrare</w>
+                            <pc n="14.8" pos="." type="point">.</pc>
+                        </s>
+                    </l>
+                </quote>
+                <bibl>Dante Alighieri, Rime Nuove, It., XIV sec. (Versi 6-9, Rime XXII).</bibl>
+            </cit>
+            <p>
+                <l xml:id="segRiga14" facs="#Riga14">
+                    <w>
+                        <damage agent="water">
+                            <gap atLeast="2" atMost="3" unit="chars" reason="illegible"/>
+                        </damage>
+                        ce
+                    </w>
+                    <s>
+                        <w n="15.1" pos="NNT1">tempo</w>
+                        <w n="15.2" pos="AT">delle</w>
+                        <w n="15.3" pos="NN2">maggiolate</w>
+                        <pc n="15.4" pos="," type="comma">,</pc>
+                    </s>
+                    <s>
+                        <w n="16.1" pos="AT">delle</w>
+                        <w n="16.2" pos="NN2">corti</w>
+                        <w n="16.3" pos="IO">d</w>
+                        <pc n="16.4" pos=" ' " type="apostrophe">'</pc>
+                        <w n="16.5" pos="NN1">amore</w><pc pos="," type="comma">,</pc>
+                    </s>
+                </l>
+                <l xml:id="segRiga15" facs="#Riga15">
+                    <s>
+                        <w n="17.1" pos="IO">dei</w>
+                        <w n="17.2" pos="NN2">tornei</w>
+                        <w n="17.3" pos="NN1">fioriti</w>
+                        <pc n="17.4" pos="." type="point">.</pc>
+                    </s>
+                </l>
+            </p>
+            <p>
+                <l xml:id="segRiga16" facs="#Riga16">
+                    <s>
+                        <w n="18.1" pos="NP1">Dante</w>
+                        <w n="18.2" pos="VHN">aveva</w>
+                        <w n="18.3" pos="II">in</w>
+                        <w n="18.4" pos="NN1">cuore</w>
+                        <w n="18.5" pos="RR">già</w>
+                        <w n="18.6" pos="AT">il</w>
+                        <w n="18.7" pos="APPGE">suo</w>
+                        <w n="18.8" pos="NN1">poema</w>
+                    </s>
+                    <w n="19.1" pos="CC">e</w>
+                    <w n="19.2" pos="NP1">Giotto</w>
+                    <w n="19.3" pos="AT">le</w>
+                    <w n="19.4" pos="APPGE">sue</w>
+                </l>
+                <l xml:id="segRiga17" facs="#Riga17">
+                    <w n="19.5" pos="NP2">Madonne</w>
+                    <w n="19.6" pos="CC">e</w>
+                    <w n="19.7" pos="NP1">Firenze</w>
+                    <w n="19.8" pos="NP1">
+                        <choice xml:lang="it">
+                            <abbr type="suspension">
+                                <c>S</c>
+                                <pc pos="." type="point">.</pc>
+                            </abbr>
+                            <expan>S
+                                <ex>anta</ex>
+                            </expan>
+                        </choice>
+                    </w>
+                    <w n="19.9" pos="NP1">Maria</w>
+                    <w n="19.10" pos="FW">del</w>
+                    <w n="19.11" pos="NP1">Fiore</w>
+                    <pc n="19.12" pos="." type="point">.</pc>
+                </l>
+            </p>
+            <p>
+                <l xml:id="segRiga18" facs="#Riga18">
+                    <s>
+                        <w n="20.1" pos="VBDZ">era</w>
+                        <w n="20.2" pos="AT">il</w>
+                        <w n="20.3" pos="NN1">boccio</w>
+                        <w n="20.4" pos="RR">
+                            <choice>
+                                <orig>omai</orig>
+                                <reg>ormai</reg>
+                            </choice>
+                        </w>
+                        <w n="20.5" pos="JJ">perfetto</w>
+                        <w n="20.6" pos="CC">e</w>
+                        <w n="20.7" pos="">pieno</w>
+                        <pc n="20.8" pos="," type="comma">,</pc>
+                    </s>
+                    <s>
+                        <w n="21.1" pos="CS">
+                            <choice>
+                                <orig>onde</orig>
+                                <reg>dove</reg>
+                            </choice>
+                        </w>
+                        <pc n="21.2" pos="," type="comma">,</pc>
+                        <choice>
+                            <orig>colla</orig>
+                            <reg>
+                                <w n="21.3" pos="IW">con</w>
+                                <w n="21.4" pos="AT">la</w>
+                            </reg>
+                        </choice>
+                        <w n="21.5" pos="NN1">letizia</w>
+                    </s>
+                </l>
+                <l xml:id="segRiga19" facs="#Riga19">
+                    <s>
+                        <w n="22.1" pos="CC">e</w>
+                        <w n="22.2" pos="AT">la</w>
+                        <w n="22.3" pos="NN1">veemenza</w>
+                        <w n="22.4" pos="IO">di</w>
+                        <w n="22.5" pos="AT1">una</w>
+                        <w n="22.6" pos="NN1">primavera</w>
+                        <w n="22.7" pos="JJ">improvvisa</w>
+                        <pc n="22.8" pos="," type="comma">,</pc>
+                    </s>
+                    <s>
+                        <w n="23.1" pos="VVD">fiorì</w>
+                        <w n="23.2" pos="AT">l</w>
+                        <pc n="23.3" pos=" ' " type="apostrophe">'</pc>
+                        <w n="23.4" pos="NN1">arte</w>
+                    </s>
+                </l>
+                <l xml:id="segRiga21" facs="#Riga21">
+                    <w n="24.1" pos="JJ">Fiorentina</w>
+                    <s>
+                        <w n="25.1" pos="CC">e</w>
+                        <w n="25.2" pos="IW">con</w>
+                        <w n="25.3" pos="PPH1">essa</w>
+                        <w n="25.4" pos="AT">la</w>
+                        <w n="25.5" pos="NN1">civiltà</w>
+                        <w n="25.6" pos="JJ">nuova</w>
+                        <w n="25.7" pos="IO">d</w>
+                        <pc n="25.8" pos=" ' " type="apostrophe">'</pc>
+                        <w n="25.9" pos="NP1">Italia</w>
+                    </s>
+                    <w n="26.1" pos="CC">e</w>
+                    <w n="26.2" pos="IO">del</w>
+                </l>
+                <l xml:id="segRiga22" facs="#Riga22">
+                    <s>
+                        <w n="27.1" pos="NN1">mondo</w>
+                        <w n="27.2" pos="JJ">tutto</w>
+                        <pc n="27.3" pos="." type="point">.</pc>
+                    </s>
+                </l>
+            </p>
+
+            <p>
+                <l xml:id="segRiga23" facs="#Riga23">
+                    <s>
+                        <w n="28.1" pos="CCB">Ma</w>
+                        <w n="28.2" pos="NP1">Dante</w>
+                        <pc n="28.3" pos="," type="comma">,</pc>
+                    </s>
+                    <s>
+                        <w n="29.1" pos="MD">primo</w>
+                        <w n="29.2" pos="NN1">segno</w>
+                        <w n="29.3" pos="CC">ed</w>
+                        <w n="29.4" pos="NN1">espressione</w>
+                        <w n="29.5" pos="JJ">pura</w>
+                        <w n="29.6" pos="IO">di</w>
+                        <w n="29.7" pos="PPH1">essa</w>
+                        <pc n="29.8" pos="," type="comma">,</pc>
+                    </s>
+                </l>
+                <l xml:id="segRiga24" facs="#Riga24">
+                    <s>
+                        <w n="30.1" pos="NN1">
+                            <damage agent="water">
+                                <supplied reason="illegible">
+                                    <add place="inline">luce</add>
+                                </supplied>
+                            </damage>
+                        </w>
+                        <w n="30.1" pos="IO">di</w>
+                        <w n="30.2" pos="AT1">una</w>
+                        <w n="30.3" pos="JJ">
+                            gra
+                            <supplied reason="illegible">
+                                <add>n</add>
+                            </supplied>
+                           de
+                        </w>
+                        <w n="30.4" pos="NNT1">alba</w>
+                        <w n="30.5" pos="II">nella</w>
+                        <w n="30.6" pos="NN1">tenebra</w>
+                        <w n="30.7" pos="JJ">fitta</w>
+                        <w n="30.8" pos="JJ">medioevale</w>
+                        <pc n="30.9" pos="," type="comma">,</pc>
+                    </s>
+                </l>
+                <l xml:id="segRiga25" facs="#Riga25">
+                    <w>
+                        <damage agent="water">
+                            <gap atLeast="3" atMost="5" unit="chars" reason="illegible"/>
+                        </damage>
+                        eniva
+                    </w>
+                    <pc n="31.1" pos="-" type="dash">-</pc>
+                    <s>
+                        <w n="32.1" pos="PPHS1">Egli</w>
+                        <w n="32.2" pos="NN1">eroe</w>
+                        <w n="32.3" pos="JJ">divino</w>
+                        <w n="32.4" pos="II">tra</w>
+                        <w n="32.5" pos="AT">gli</w>
+                        <w n="32.6" pos="NN2">uomini</w>
+                        <pc n="32.7" pos="-" type="dash">-</pc>
+                        <w n="32.8" pos="NN1">uomo</w>
+                        <w n="32.9" pos="CC">e</w>
+                        <pc n="32.10" pos="," type="comma">,</pc>
+                    </s>
+                </l>
+                <l xml:id="segRiga26" facs="#Riga26">
+                    <s>
+                            <w n="33.1" pos="VVG">
+                            <damage agent="water">
+                                <supplied reason="illegible">
+                                    <add place="inline">man</add>
+                                </supplied>
+                            </damage>
+                            tenendo
+                        </w>
+                            <w n="33.2" pos="II">nel</w>
+                            <w n="33.3" pos="JJ">gran</w>
+                            <w n="33.4" pos="NN1">petto</w>
+                            <w n="33.5" pos="AT">l</w>
+                        <pc n="33.6" type="apostrophe">'</pc>
+                            <w n="33.7" pos="NN1">impeto</w>
+                            <w n="33.8" pos="JJ">titanico</w>
+                            <w n="33.9" pos="CC">e</w>
+                            <w n="33.10" pos="AT">l</w>
+                        <pc n="33.11" pos=" ' " type="apostrophe">'</pc>
+                            <w n="33.12" pos="NN1">invettiva</w>
+                    </s>
+                </l>
+                <l xml:id="segRiga27" facs="#Riga27">
+                    <w n="34.1">
+                        <damage agent="water">
+                            <gap atLeast="5" atMost="7" unit="chars" reason="illegible"/>
+                        </damage>
+                    </w>
+                    <pc n="34.2" pos="," type="comma">,</pc>
+                    <s>
+                        <w n="35.1" pos="VVD">cantava</w>
+                        <pc n="35.2" pos="," type="comma">,</pc>
+                    </s>
+                    <s>
+                        <w n="36.1" pos="IW">coll</w>
+                        <pc n="36.2" pos=" ' " type="apostrophe">'</pc>
+                        <w n="36.3" pos="NN1">anima</w>
+                        <w n="36.4" pos="JJ">fiorita</w>
+                        <w n="36.5" pos="IO">del</w>
+                        <w n="36.6" pos="NN1">segno</w>
+                        <w n="36.7" pos="IO">di</w>
+                        <w n="36.8" pos="NP1">fran</w>
+                        <pc n="36.9" pos="-" type="dash">-</pc>
+                    </s>
+
+                </l>
+                <l xml:id="segRiga28" facs="#Riga28">
+                    <s>
+                        <w n="37.1" pos="NP1">
+                            <damage agent="water">
+                                <supplied reason="illegible">
+                                    <add place="inline">cesca</add>
+                                </supplied>
+                            </damage>
+                        </w>
+                        <w n="37.2" pos="VVD">cantava</w>
+                        <pc n="37.3" pos=":" type="two points">:</pc>
+                    </s>
+                </l>
+            </p>
+            <cit type="transcription">
+                <quote>
+                    <l xml:id="segRiga29" facs="#Riga29">
+                        <s>
+                            <w n="38.1" pos="NN2">Donne</w>
+                            <pc n="38.2" pos="," type="comma">,</pc>
+                            <w n="38.3" pos="PNQS">che</w>
+                            <w n="38.4" pos="VH0">avete</w>
+                            <w n="38.5" pos="NN1">intelletto</w>
+                            <w n="38.6" pos="IO">di</w>
+                            <w n="38.7" pos="NN1">amore</w>
+                        </s>
+                    </l>
+                </quote>
+                <bibl>Dante Alighieri, Rime Nuove, It., XIV sec. (Verso 1, Rime XIV).</bibl>
+            </cit>
+            <l xml:id="segRiga30" facs="#Riga30">
+                <w n="39.1" pos="NP1">
+                    <choice>
+                        <abbr type="suspension">U
+                            <pc pos="." type="point">.</pc>
+                        </abbr>
+                        <expan>
+                            U<ex>MBERTO</ex>
+                        </expan>
+                    </choice>
+                    SBORGI
+                </w>
+            </l>
+        <note>
+            Sborgi, Umberto. Nato a <placeName>Cecina</placeName> nel
+            <date when="1883">1883</date>, fu emerito insegnante nelle Università di Parma e Milano; dal
+            <date when="1941">1941</date> al <date when="1953">1953</date>. Fu direttore dell'Istituto di Chimica generale ed Inorganica in quest'ultimo Ateneo ed autore di numerose pubblicazioni;
+            ha proseguito un percorso scientifico, politico e sociale costruito sul rispetto per la natura, il pensiero, il corpo, la sottile creatività individuale.
+        </note>
+        <l xml:id="segInt1" facs="#Int1">
+            <w n="30.1" pos="VV0">Ricordati</w>
+        </l>
+        <l xml:id="segInt2" facs="#Int2">
+            <w n="30.2" pos="FW">
+                <unclear>de</unclear>
+            </w>
+            <w n="30.3" pos="FW">la</w>
+            <w n="30.4" pos="">Tia</w>
+            <sic>
+                <pc n="30.5" pos="NP1" type="underscore">_</pc>
+            </sic>
+        </l>
+        <l xml:id="segInt3" facs="#Int3">
+            14-11-1911
+        </l>
+        <l xml:id="segSerie" facs="#Serie">
+            <w n="32.1" pos="MC">
+                76
+            </w>
+        </l>
+    <note>numero seriale cartolina.</note>
+    <l xml:id="segmentoSerie" facs="#Serie">
+        <w n="33.1" pos="NN1">Proprietà</w>
+        <w n="33.2" pos="JJ">Artistica</w>
+        <w n="33.3" pos="NP1">E</w>
+        <pc n="33.4" pos="." type="point">.</pc>
+        <w n="33.5" pos="NP1">Sborgi</w>
+        <w n="33.6" pos="-" type="dash">-</w>
+        <w n="33.7" pos="NP1">Firenze</w>
+        <pc n="33.8" pos="." type="point">.</pc>
+    </l>
+    <l xml:id="segInventario2" facs="#Inventario2">
+        <w n="32.1" pos="MC">80</w>
+    </l>
+    <note>numero di inventario annotato sulla cartolina.</note>
+    </div>
+    </body>
+    </text>
+    <facsimile>
+            <surfaceGrp>
+                <surface xml:id="SECONDOFRONTE" start="#SECONDOFRONTE">
+                    <graphic url="img/7694-080F.jpg" width="390px" height="602px"/>
+                    <zone xml:id="Dipinto" points=" 13,900 1382,900 1382,4 4,4 "/>
+                    <zone xml:id="Verso" ulx="508" uly="918" lrx="1380" lry="1033"/>
+                </surface>
+                <pb/>
+                <surface xml:id="SECONDORETRO" start="#SECONDORETRO">
+                    <graphic url="img/SECONDORETRO.jpg" width="1660px" height="1048px"/>
+                    <zone xml:id="Testo2" points=" 80,907 706,911 705,130 104,131 "/>
+                        <zone xml:id="Riga1" points=" 164,215 662,220 656,154 158,150 " rendition="Line"/>
+                        <zone xml:id="Riga2" ulx="163" uly="269" lrx="619" lry="270" rendition="Line"/>
+                        <zone xml:id="Riga3" ulx="171" uly="290" lrx="631" lry="294" rendition="Line"/>
+                        <zone xml:id="Riga4" ulx="175" uly="305" lrx="630" lry="309" rendition="Line"/>
+                        <zone xml:id="Riga5" ulx="174" uly="325" lrx="642" lry="331" rendition="Line"/>
+                        <zone xml:id="Riga6" ulx="124" uly="353" lrx="703" lry="356" rendition="Line"/>
+                        <zone xml:id="Riga7" ulx="105" uly="377" lrx="705" lry="378" rendition="Line"/>
+                        <zone xml:id="Riga8" ulx="104" uly="394" lrx="359" lry="396" rendition="Line"/>
+                        <zone xml:id="Riga9" ulx="117" uly="414" lrx="706" lry="419" rendition="Line"/>
+                        <zone xml:id="Riga10" ulx="110" uly="434" lrx="560" lry="438" rendition="Line"/>
+                        <zone xml:id="Riga11" ulx="112" uly="460" lrx="606" lry="461" rendition="Line"/>
+                        <zone xml:id="Riga12" ulx="113" uly="484" lrx="571" lry="489" rendition="Line"/>
+                        <zone xml:id="Riga13" ulx="126" uly="510" lrx="630" lry="513" rendition="Line"/>
+                        <zone xml:id="Riga14" ulx="109" uly="537" lrx="700" lry="542" rendition="Line"/>
+                        <zone xml:id="Riga15" ulx="110" uly="556" lrx="295" lry="560" rendition="Line"/>
+                        <zone xml:id="Riga16" ulx="112" uly="577" lrx="704" lry="578" rendition="Line"/>
+                        <zone xml:id="Riga17" ulx="109" uly="596" lrx="544" lry="596" rendition="Line"/>
+                        <zone xml:id="Riga18" ulx="106" uly="593" lrx="540" lry="601" rendition="Line"/>
+                        <zone xml:id="Riga19" ulx="115" uly="612" lrx="703" lry="614" rendition="Line"/>
+                        <zone xml:id="Riga20" ulx="105" uly="634" lrx="695" lry="635" rendition="Line"/>
+                        <zone xml:id="Riga21" ulx="103" uly="656" lrx="707" lry="657" rendition="Line"/>
+                        <zone xml:id="Riga22" ulx="106" uly="671" lrx="271" lry="680" rendition="Line"/>
+                        <zone xml:id="Riga23" ulx="111" uly="691" lrx="698" lry="697" rendition="Line"/>
+                        <zone xml:id="Riga24" ulx="99" uly="711" lrx="700" lry="721" rendition="Line"/>
+                        <zone xml:id="Riga25" ulx="106" uly="733" lrx="698" lry="739" rendition="Line"/>
+                        <zone xml:id="Riga26" ulx="107" uly="753" lrx="697" lry="758" rendition="Line"/>
+                        <zone xml:id="Riga27" ulx="106" uly="774" lrx="698" lry="778" rendition="Line"/>
+                        <zone xml:id="Riga28" ulx="110" uly="790" lrx="316" lry="800" rendition="Line"/>
+                        <zone xml:id="Riga29" ulx="186" uly="813" lrx="631" lry="823" rendition="Line"/>
+                        <zone xml:id="Riga30" ulx="530" uly="842" lrx="671" lry="848" rendition="Line"/>
+                    <zone xml:id="Proprietà" points=" 14,854 80,856 92,242 24,240 " rendition="Line"/>
+                    <zone xml:id="Seriale" points=" 711,1013 901,1024 915,882 740,870 " rendition="Line"/>
+                    <zone xml:id="Inventario2" points=" 1540,16 1538,103 1644,109 1651,18 "/>
+                    <zone xml:id="Intestazione" points=" 795,144 1444,166 1428,608 791,583 "/>
+                        <zone xml:id="Int1" ulx="814" uly="188" lrx="1244" lry="233"/>
+                        <zone xml:id="Int2" ulx="832" uly="280" lrx="1279" lry="323"/>
+                        <zone xml:id="Int3" ulx="907" uly="482" lrx="1352" lry="536"/>
+                </surface>
+            </surfaceGrp>
+    </facsimile>
+ </TEI>
+</teiCorpus>
+MacBook-Air-di-simone:~ jarvis$ xmllint ///Users/jarvis/Desktop/CDT/teicorpus.xml --noout
+MacBook-Air-di-simone:~ jarvis$ 
